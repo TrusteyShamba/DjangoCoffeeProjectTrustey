@@ -1,9 +1,21 @@
-!DOCTYPE html>
-<html>
-<head>
-    <title>My Website</title>
-</head>
-<body>
-    <h1>Welcome to Trustey Coffee</h1>
-    <p>Your home cafe`</p>
-</body>
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1>Trustey Coffee</h1> 
+<div class="row">
+
+    {% for coffee in coffee %}
+        <div class="color">
+
+        <div class="card" style="width: 18rem;">
+            <img src="{{ coffee.image }}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{ coffee.name }}</h5>
+              <p class="card-text">${{ coffee.price }} </p>
+              <a href="#" class="btn btn-primary">Add to cart</a>
+            </div>
+          </div>
+    </div>
+    {% endfor %}
+{% endblock %}
