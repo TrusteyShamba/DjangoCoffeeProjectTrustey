@@ -85,3 +85,11 @@ from django.apps import AppConfig
 class CoffeeConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'coffee'
+from django.db import models
+
+class Coffee(models.Model):
+    name=models.CharField(max_length=255)
+    price=models.FloatField()
+    quantity=models.IntegerField()
+    image=models.CharField(max_length=2083)
+    image_url = models.URLField()  
